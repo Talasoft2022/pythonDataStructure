@@ -1,0 +1,30 @@
+# First task
+students = {
+    "Track1": {
+        "names": list(set(['Amaka disappoint', 'Nedu japan', 'Pretty cynthia', 'Nedu japan', 'Pretty cynthia', 'Pretty cynthia']))
+    },
+    "Track2": {
+        "names": list(set(('jon doe', 'john doe', 'john doe', 'jon bellion', 'jon bellion', 'john bellcat', 'jon doe')))
+    },
+    "Track3": {
+        "names": list(set({'ada ada', 'pyhon ezege', 'dog catcher', 'bitrus beetroot', 'doja cat', 'beja rat'}))
+    }
+}
+
+# Second task
+import random
+
+for track, data in students.items():
+    scores = [random.randint(60, 100) for _ in range(len(data["names"]))]
+    data["scores"] = scores
+
+# Third task
+top_students = {}
+for track, data in students.items():
+    scores = data["scores"]
+    max_score = max(scores)
+    top_student_idx = scores.index(max_score)
+    top_student_name = data["names"][top_student_idx]
+    top_students[track] = (top_student_name, max_score)
+
+print(f"The top students are: {top_students['Track1'][0]} with score of {top_students['Track1'][1]} for Track1 track, {top_students['Track2'][0]} with score of {top_students['Track2'][1]} for Track2 track and {top_students['Track3'][0]} with score of {top_students['Track3'][1]} for Track3 track")
