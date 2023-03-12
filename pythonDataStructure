@@ -1,17 +1,22 @@
+#Akeem Abiodun
 # First task
+#converting Each to set to remove duplicates
 students = {
-    "Track1": {
+    "Design": {
         "names": list(set(['Amaka disappoint', 'Nedu japan', 'Pretty cynthia', 'Nedu japan', 'Pretty cynthia', 'Pretty cynthia']))
     },
-    "Track2": {
+    "Front_End": {
         "names": list(set(('jon doe', 'john doe', 'john doe', 'jon bellion', 'jon bellion', 'john bellcat', 'jon doe')))
     },
-    "Track3": {
+    "Back_End": {
         "names": list(set({'ada ada', 'pyhon ezege', 'dog catcher', 'bitrus beetroot', 'doja cat', 'beja rat'}))
     }
 }
 
 # Second task
+iterating through the dictionary named students using a for loop,we generates a list of random scores between 60 and 100, for each key-value pair in the dictionary, 
+,using a list comprehension, and assigns it to a new key "scores" in the corresponding value of the dictionary.
+
 import random
 
 for track, data in students.items():
@@ -27,4 +32,6 @@ for track, data in students.items():
     top_student_name = data["names"][top_student_idx]
     top_students[track] = (top_student_name, max_score)
 
-print(f"The top students are: {top_students['Track1'][0]} with score of {top_students['Track1'][1]} for Track1 track, {top_students['Track2'][0]} with score of {top_students['Track2'][1]} for Track2 track and {top_students['Track3'][0]} with score of {top_students['Track3'][1]} for Track3 track")
+print(f"The top students are: {top_students['Design'][0]} with score of {top_students['Design'][1]} for Design track, 
+{top_students['Front_End'][0]} with score of {top_students['Front_End'][1]} for Front End track and 
+{top_students['Back_End'][0]} with score of {top_students['Back_End'][1]} for Back End track")
